@@ -1,0 +1,293 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+	display:block;
+}
+nav ul {
+    list-style:none;
+}
+blockquote, q {
+    quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+input, select {
+    vertical-align:middle;
+}
+
+/* 
+	Mobile Optimization (Chrome, FF, Safari) 
+	http://www.aestheticallyloyal.com/public/optimize-legibility/
+*/
+h1, h2, h3 {text-rendering: optimizeLegibility;}
+
+
+
+/* --------------- OVERALL STRUCTURE ----------------- */
+body {
+	background: #FFF;
+}
+
+#content {
+  width: 640px;
+  margin: 10px auto 0 auto;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 12px;  
+  
+  background: #565656; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #565656 0%, #333 55%, #000 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0%,#565656), color-stop(55%,#333), color-stop(100%,#000)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #565656 0%,#333 55%,#000 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #565656 0%,#333 55%,#000 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #565656 0%,#333 55%,#000 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #565656 0%,#333 55%,#000 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', endColorstr='#000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+
+/* ----------------- SHUFFLE BUTTON --------------- */
+#scramble {
+  position: relative;
+  display: block;
+  margin: 15px auto 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  background: #c3630d url(../img/shuffle.png) no-repeat center center;
+  color: #FFF;
+  text-indent: -9999px;
+  
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  
+  -webkit-box-shadow: inset 4px 4px 6px 3px rgba(225, 115, 12, 1);
+  box-shadow: inset 4px 4px 6px 3px rgba(225, 115, 12, 1);
+}
+
+#scramble:hover {
+  -webkit-box-shadow: inset 3px 3px 6px 1px rgba(156, 79, 10, 1);
+  box-shadow: inset 3px 3px 6px 1px rgba(156, 79, 10, 1);
+  cursor: pointer;
+}
+
+
+
+/* ----------------- PUZZLE --------------- */
+#puzzle {
+  position: relative;
+  width: 640px;
+  height: 640px;
+  background: #FFF;
+}
+
+#puzzle li {
+  position: absolute;
+  z-index: 10;
+  display: block;
+  width: 160px;
+  height: 160px;
+  background-image: url(../img/cat.jpeg);
+  background-repeat: no-repeat;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#puzzle li p {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: .7em;
+  color: #FFF;
+  text-shadow: 1px 1px 3px #333;
+  filter: dropshadow(color=#333, offx=1, offy=1);
+}
+
+#puzzle li:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+#puzzle li:active {
+  opacity: 1;
+}
+
+/* Blank tile */
+#puzzle li#piece15:hover {
+  cursor: default;
+}
+
+#piece0 {background-position: 0 0; top: 0; left: 0;}
+#piece1 {background-position: -160px 0; top: 0; left: 160px;}
+#piece2 {background-position: -320px 0; top: 0; left: 320px;}
+#piece3 {background-position: -480px 0; top: 0; left: 480px;}
+#piece4 {background-position: 0 -160px; top: 160px; left: 0;}
+#piece5 {background-position: -160px -160px; top: 160px; left: 160px;}
+#piece6 {background-position: -320px -160px; top: 160px; left: 320px;}
+#piece7 {background-position: -480px -160px; top: 160px; left: 480px;}
+#piece8 {background-position: 0 -320px; top: 320px; left: 0;}
+#piece9 {background-position: -160px -320px; top: 320px; left: 160px;}
+#piece10 {background-position: -320px -320px; top: 320px; left: 320px;}
+#piece11 {background-position: -480px -320px; top: 320px; left: 480px;}
+#piece12 {background-position: 0 -480px; top: 480px; left: 0;}
+#piece13 {background-position: -160px -480px; top: 480px; left: 160px;}
+#piece14 {background-position: -320px -480px; top: 480px; left: 320px;}
+li#piece15 {
+  z-index: 0;
+  top: 480px;
+  left: 480px;
+  background-image: none;
+  background-color: #FFF;
+  -webkit-box-shadow: inset 0px 0px 40px 3px rgba(200, 200, 200, 1);
+  box-shadow: inset 0px 0px 40px 3px rgba(200, 200, 200, 1);
+}
+
+
+
+/* --------------- SOLVED STATE ----------------- */
+li#piece15.solved {
+  width: 160px;
+  height: 160px;
+  background: transparent url(../img/cat.jpeg) no-repeat -480px -480px;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+@-webkit-keyframes bounce {
+	0%   {top: 0}
+	80%  {top: 100px}
+	100% {top: 0}
+}
+
+@-moz-keyframes bounce {
+	0%   {top: 0}
+	80%  {top: 220px}
+	100% {top: 0}
+}
+@-ms-keyframes bounce {
+	0%   {top: 0}
+	80%  {top: 220px}
+	100% {top: 0}
+}
+
+#congrats {
+	position: absolute;
+  z-index: 30;
+  display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #E6740E;
+	opacity: 0;	
+  -webkit-transition: all 1s ease;
+	-moz-transition: 	all 1s ease;
+}
+
+#congrats.active {
+  z-index: 30;
+  display: block;
+	top: 0;
+	opacity: 1;
+	-webkit-animation: bounce 1.5s ease-in-out 1;
+}
+
+#congrats p {
+  margin: 30px 0;
+  font-size: 1.2em;
+	text-align: center;
+}
+
+
+
+/* --------------- TYPOGRAPHY ----------------- */
+* {
+  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+
+/* Disable browser highlighting text */
+a, p {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
